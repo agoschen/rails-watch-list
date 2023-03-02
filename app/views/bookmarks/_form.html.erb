@@ -1,0 +1,6 @@
+<%= simple_form_for [ @list, @bookmark ] do |f| %>
+  <%= f.input :comment, label: 'Comment', error: 'Name is mandatory, please specify one'%>
+  <%= f.association :list, label: 'List' %>
+  <%= f.association :movie, label: 'Movie' %>
+  <%= f.button :submit, class:"btn btn-secondary" %>
+<% end %>
