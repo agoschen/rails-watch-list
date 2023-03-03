@@ -3,8 +3,8 @@
 
 <% @lists.each do | list | %>
   <div class="card" style="width: 18rem;">
-    <%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
     <div class="card-body">
+      <%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fill %>
       <h5 class="card-title"><%= list.name %></h5>
       <%= link_to "Show this list", list_path(list) %>
     </div>
