@@ -1,5 +1,7 @@
 <h1><%= @list.name %></h1>
-<%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
+<% if @list.photo.attached? %>
+        <%= cl_image_tag @list.photo.key, width: 400, height: 300, crop: :fill %>
+<% end %>
 
 <% @bookmarks.each do | bookmark | %>
   <div class="card" style="width: 18rem;">
@@ -14,3 +16,4 @@
 
 <%= link_to "Create a new list", new_list_path %>
 <%= link_to "Create a new bookmark", new_list_bookmark_path(@list) %>
+<%= link_to "Go back", lists_path %>

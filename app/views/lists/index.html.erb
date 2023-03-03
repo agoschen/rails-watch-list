@@ -4,7 +4,9 @@
 <% @lists.each do | list | %>
   <div class="card" style="width: 18rem;">
     <div class="card-body">
-      <%= cl_image_tag list.photo.key, height: 300, width: 400, crop: :fill %>
+      <% if list.photo.attached? %>
+        <%= cl_image_tag list.photo.key, width: 400, height: 300, crop: :fill %>
+      <% end %>
       <h5 class="card-title"><%= list.name %></h5>
       <%= link_to "Show this list", list_path(list) %>
     </div>
