@@ -3,7 +3,7 @@
 
 <% @lists.each do | list | %>
   <div class="card" style="width: 18rem;">
-    <img src="/app/assets/images/comedy-6054626_1280.jpg" class="card-img-top" alt="<%list.name%>">
+    <%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
     <div class="card-body">
       <h5 class="card-title"><%= list.name %></h5>
       <%= link_to "Show this list", list_path(list) %>
@@ -13,4 +13,3 @@
 
 
 <%= link_to "Create a new list", new_list_path %>
-
